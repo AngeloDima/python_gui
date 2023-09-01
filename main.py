@@ -1,13 +1,20 @@
-#Ciclo While
+#ciclo for
+
+lista_citta = ["Torino", "Augusta", "Napoli"]
+
+for citta in lista_citta:
+    print(citta)
 
 
-x = ["Milano", "Augusta", "Torino"]
+#ciclo while
+while len(lista_citta) > 2:
+    print("cacca")
+    break
 
-i = 0 
-while i < 6:
-    i += 1
-    if i == 3:
-        continue
-    print(i)
 
-print("Fine ciclo")
+for riga in range(6):
+    for colonna in range(4):
+        colonna += 1
+        print("(" + str(riga) + ":" + str(colonna) + ")")
+else:
+    print("ho finito")
