@@ -1,34 +1,37 @@
-#Booleani
-q = True
-w = False
+x = 5
+y = 10
 
-if 5 < 10:
-    print("ciao sono minore di 10")
-else:
-    print("ciao sono maggiore di 10")
+# OPERATORI
+# + - * / % ** //
 
-# valutare il valore
-r = 0
-t = 1
+print(x + y)   #ADDIZIONE
 
-print(bool(t))
+print(x - y)   #SOTTRAZIONE
 
-pane = 0
-u = 1
+print (x * y)  #MOLTIPLICAZIONE
 
-if pane:
-    print("non serve andare al supermercato")
-else:
-    print("uscire a prendere il pane")
+print (x / y)  #DIVISIONE
+
+print (x % y)  #MODULO (DA IL RESTO DELLA DIVISIONE)
+
+print (x ** y)  #POTENZA
+
+print (x // y)  #DIVISIONE PER DIFETTO
 
 
-#-----
+# metodi
+# min  max  abs  pow
+l = min(8, 2, 4)
+print(l)
 
-i = []
 
-if i:
-    print("comprare cose")
-else:
-    print("ho tutto")
+l = max(8, 2, 4)
+print(l)
 
-print(bool(i))
+
+l = abs(5)
+print(l)
+
+
+l = pow(5, 2)
+print(l)
