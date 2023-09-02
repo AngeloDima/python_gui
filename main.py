@@ -1,45 +1,24 @@
-#dictionary
+# funzioni
 
-    # get(), keys(), values(), item()
+def faiLaPasta(pasta, sugo):
+    print("metti l'acqua")
+    print("fai bollire")
+    print("metti " + pasta)
+    if sugo:
+        print("prepara il sugo")
 
-persona = {
-    "nome": "angelo",
-    "cognome": "di mauro",
-    "eta": 20,
-    #si possono avere dict dentro i dict come se fosse un normale JSON
-    "indirizzo": {
-        "città": "augusta"
-    }
-}
-print(persona["indirizzo"]["città"])
+faiLaPasta(sugo = True, pasta ="Penne")
 
 
-#modificare elementi con [] e update
-persona["nome"] = "Marco"
-persona.update({"nome": "anna"})
-
-#aggiungere elementi con [] e update
-persona["colore"] = "verde"
-persona.update({"colore": "giallo"})
-
-#rimuovere elementi con pop(), popitem(), clear(), del()
-
-persona.pop("nome")
-persona.clear()
-del persona
+print("--------")
+print("--------")
+print("--------")
 
 
-#ciclare
-for x in persona:   #oppure mettere dopo persona .values(), keys() ecc quello che vogliamo prendere
-    print(persona[x])
+#Return
+def fai_somma(num1, num2):
+    somma = num1 + num2
+    return somma
 
-
-
-print(persona)
-
-
-#copiare   copy()
-
-x = persona.copy()
+x = fai_somma(2, 3)
 print(x)
-
