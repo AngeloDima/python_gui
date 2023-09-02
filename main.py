@@ -1,24 +1,27 @@
-# funzioni
+# Classi e oggetti
+class Persona:
+    #Costruttore
+    def __init__(self, nome, cognome):
+        self.nome = nome
+        self.cognome = cognome
+    #metodo
+    def saluta(self):
+        print("ciao sono " + self.nome)
 
-def faiLaPasta(pasta, sugo):
-    print("metti l'acqua")
-    print("fai bollire")
-    print("metti " + pasta)
-    if sugo:
-        print("prepara il sugo")
-
-faiLaPasta(sugo = True, pasta ="Penne")
-
-
-print("--------")
-print("--------")
-print("--------")
+#instanzio una classe "PERSONA"
+persona1 = Persona ("angelo", "Di mauro")
+persona2 = Persona ("Maria", "Carla")
 
 
-#Return
-def fai_somma(num1, num2):
-    somma = num1 + num2
-    return somma
+#richiamo il metodo
+persona1.saluta()
 
-x = fai_somma(2, 3)
-print(x)
+#Cambio il nome di Persona2
+persona2.nome = "Prati"
+persona2.saluta()
+
+
+#Eliminare un oggetto
+
+del persona2.nome   #cancello solo un parametro
+del persona2        #cancello tutto l'oggetto
