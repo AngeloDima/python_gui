@@ -1,31 +1,16 @@
-#Moduli
-                # con as cambio nome al modulo
-import mioModulo as em
+#dateTime
 
-#prendo solo un valore del modulo
-x = em.persona1["nome"]
-em.saluta(x)
+# %d: Giorno del mese (01-31)
+# %m: Mese (01-12)
+# %Y: Anno (es. 2023)
+# %H: Ore (00-23)
+# %M: Minuti (00-59)
+# %S: Secondi (00-59)
+# %A: Nome del giorno (es. Lunedì)
+# %B: Nome del mese (es. Gennaio)
+# %Y-%m-%d %H:%M:%S: Formato esteso con data e orario
 
-#ciclo il modulo
-for chiave, valore in em.persona1.items():
-    print(f"{chiave}: {valore}")
+import datetime
 
-
-#moduli built
-import platform
-a = platform.system()
-print(a)
-
-
-
-import math
-print(math.floor(2.9))
-
-
-#funzione dir MI DICE TUTTE LE FUNZIONI DI UN MODULO
-print(dir(math))
-
-
-#prendere solo una parte del modulo
-from mioModulo import persona1
-print(persona1["nome"])
+x = datetime.datetime.now()
+print(x.strftime("%d/ %m/ %Y"))
