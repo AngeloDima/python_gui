@@ -1,33 +1,17 @@
-#Json
-
-import json
-
-x = '{"nome": "angelo", "cognome": "di mauro"}'
-#da Json a python
-y = json.loads(x)
-print(y)
+#Pip
+#pip install  qualcosa
 
 
+import camelcase
 
-q = {
-    "nome": "angelo",
-    "cognome": "di mauro"
-}
-#da python a Json
-a = json.dumps(q)
-print(a)
+c = camelcase.CamelCase()
+frase = "ciao sono angelo"
+print(c.hump(frase))
 
 
-#formattare un Json    INDED=valore  ,  SEPARATORS,    in ordine alfabetico   SORT_KEYS=TRUE
+#rimuovere pack 
+#pip uninstall qualcosa
 
-k = {
-    "nome": "Angelo",
-    "cognome": "di mauro",
-    "citta": "Trento",
-    "anni": 20,
-    "passioni": ["palestra", "moto"],
-    "fidanzato": False
-}
 
-l = json.dumps(k, indent=4, separators=(". ", "= "), sort_keys=True)
-print(l)
+#vedere i vari pack installati
+#pip list
