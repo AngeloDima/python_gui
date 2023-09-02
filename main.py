@@ -1,17 +1,19 @@
-#Pip
-#pip install  qualcosa
+#Try Except
+
+x = 5
+
+try:
+    print(x)
+except NameError:
+    print("x non definita")
+except TypeError:                   #Intervieni sui problemi puoi specificare e non l'errore
+    print("numero e stringa")
+else:                               #Se tutto va bene
+    print("nessun problema")
 
 
-import camelcase
-
-c = camelcase.CamelCase()
-frase = "ciao sono angelo"
-print(c.hump(frase))
-
-
-#rimuovere pack 
-#pip uninstall qualcosa
-
-
-#vedere i vari pack installati
-#pip list
+#Creiamo noi un errore
+i = -1
+if i < 0:
+    raise Exception("numero minore di zero")
+print("ciao")
