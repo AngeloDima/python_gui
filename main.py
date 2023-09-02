@@ -1,27 +1,36 @@
-# Classi e oggetti
+#Ereditarietà
+
 class Persona:
-    #Costruttore
     def __init__(self, nome, cognome):
         self.nome = nome
         self.cognome = cognome
-    #metodo
     def saluta(self):
         print("ciao sono " + self.nome)
 
-#instanzio una classe "PERSONA"
-persona1 = Persona ("angelo", "Di mauro")
-persona2 = Persona ("Maria", "Carla")
 
 
-#richiamo il metodo
+
+
+#Eredita tutti metodi e i costruttori 
+class Insegnante(Persona):
+    def __init__(self, nome, cognome, materia):
+        super().__init__(nome, cognome)
+        self.materia = materia   #nuova proprietà che ha solo insegnate e non persona "PADRE"
+
+    def saluta(self):
+        print("buongiorno sono " + self.nome + ' ' + self.cognome)   #metodo ereditato però con l'overRide
+
+    def voto(self):
+        print("Bravo hai preso 10")
+
+
+
+persona1 = Persona("Luca", "Rossi")
+Insegnante1 = Insegnante("Anna", "Neri", "italiano")
+
+
 persona1.saluta()
-
-#Cambio il nome di Persona2
-persona2.nome = "Prati"
-persona2.saluta()
+Insegnante1.voto()
 
 
-#Eliminare un oggetto
-
-del persona2.nome   #cancello solo un parametro
-del persona2        #cancello tutto l'oggetto
+print(Insegnante1.materia)
