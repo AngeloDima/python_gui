@@ -1,30 +1,33 @@
-# Math
-#min max abs pow
+#Json
+
+import json
+
+x = '{"nome": "angelo", "cognome": "di mauro"}'
+#da Json a python
+y = json.loads(x)
+print(y)
 
 
-x = 3 + 5
-y = x + 10
-z = ((x + y) * 2 + 35) / x
+
+q = {
+    "nome": "angelo",
+    "cognome": "di mauro"
+}
+#da python a Json
+a = json.dumps(q)
+print(a)
 
 
+#formattare un Json    INDED=valore  ,  SEPARATORS,    in ordine alfabetico   SORT_KEYS=TRUE
 
-a = min(4,1,2)   #darà il numero più piccolo
-s = max(4,1,2)   #darà il numero più grande
-q = pow(4, 3)    #darà la potenza
+k = {
+    "nome": "Angelo",
+    "cognome": "di mauro",
+    "citta": "Trento",
+    "anni": 20,
+    "passioni": ["palestra", "moto"],
+    "fidanzato": False
+}
 
-#modulo importato
-import math
-
-o = math.sqrt(64)  #radice ma serve il modulo Math
-print(o)
-
-
-v = math.ceil(10.8)    #Eccesso
-print(v)
-
-g = math.floor(10.8)   #Difetto
-print(g)
-
-
-c = math.pi      #pigreco
-print(c)
+l = json.dumps(k, indent=4, separators=(". ", "= "), sort_keys=True)
+print(l)
