@@ -1,30 +1,31 @@
-#Scope
+#Moduli
+                # con as cambio nome al modulo
+import mioModulo as em
 
-#Scope Locale
-def funzione():
-    x = 300
+#prendo solo un valore del modulo
+x = em.persona1["nome"]
+em.saluta(x)
 
-    def sottoFunzione():
-        print(x)
-    sottoFunzione()
-
-funzione()
-
-
-#Scope Globale
-
-y = 500
-
-def glob():
-    print(y)
-
-glob()
+#ciclo il modulo
+for chiave, valore in em.persona1.items():
+    print(f"{chiave}: {valore}")
 
 
-#parole chiavi GLOBALI
+#moduli built
+import platform
+a = platform.system()
+print(a)
 
-def parola():
-    global i   #KeyWord
-    i = 100
-    print(i)
-parola()
+
+
+import math
+print(math.floor(2.9))
+
+
+#funzione dir MI DICE TUTTE LE FUNZIONI DI UN MODULO
+print(dir(math))
+
+
+#prendere solo una parte del modulo
+from mioModulo import persona1
+print(persona1["nome"])
