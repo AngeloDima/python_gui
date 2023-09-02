@@ -1,55 +1,45 @@
-#User input
-import sys
 persona = {
-    "nome": "Luca",
-    "cognome": "Rossi",
-    "eta": 21
+    "nome": "angelo"
 }
 
-operazioni = ("aggiungere", "modificare", "eliminare", "stoppa")
+operazioni = ("add", "edit", "delete")
 
 def start():
-    operazione = input("cosa vuoi fare? ")
-    if operazione == operazioni[0]:
-        param = input("Aggiungi chiave valore: separati da una virgola ")
-        aggiungi(param.split(","))
+    key = input("quale operazione vuoi eseguire?: ")
+    if key == operazioni[0]:
+        kp = input("inserisci la chiave e il paramentro con la , come spazio: ")
+        add(kp.split(","))
 
-    elif operazione == operazioni[1]:
-        chiave = input("Inserisci la chiave da modificare: ")
-        valore = input("Inserisci il valore da modificare: ")
-        modifica(chiave, valore)
+    elif key == operazioni[1]:
+        chiave = input("chiave da modificare: ")
+        valore = input("valore da modificare: ")
+        edit(chiave, valore)
 
-    elif operazione == operazioni[2]:
-        chiave = input("inserisci la chiave della persona da eliminare: ")
-        eliminare(chiave)
-    
+    elif key == operazioni[2]:
+        chiave = input("chiave da eliminare: ")
+        delete(chiave)
 
-def aggiungi(param):
-    chiave = param[0]
-    valore = param[1]
-    persona[chiave]=valore
+
+def add(p):
+    chiave = p[0]
+    valore = p[1]
+    persona[chiave] = valore
     print(persona)
 
 
-def modifica(chiave, valore):
+
+def edit(chiave,valore):
     if chiave in persona:
         persona[chiave] = valore
         print(persona)
     else:
-        print("chiave non trovata nella persona")
+        print("chiave non trovata")
 
 
-def eliminare(chiave):
+def delete(chiave):
     if chiave in persona:
         del persona[chiave]
-        print(f"Chiave '{chiave}' eliminata dalla persona")
-    else:
-        print("Chiave non trovata nella persona")
-
-
-
+        print(persona)
 
 while True:
-    start()
-
-
+    start()    
