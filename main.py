@@ -1,8 +1,49 @@
-# Formattazione stringa
+#Gestione dei file
+# r = leggi, errore se non esiste
+# a = append, crea se non esiste
+# w = scrivi, crea se non esiste
+# x = crea file, errore se siste
 
-peso = 72
-altezza = 177
-eta = 20
-frase = "ciao sono Angelo e sono alto {altezza} cm e peso {peso} kg e ho {eta} anni"
+f = open("testo.txt", "r")
 
-print(frase.format(altezza = altezza, peso = peso, eta = eta))
+
+#leggi tutto o imposta un limite di caratteri READ
+#leggi tutta la riga READLINE
+
+print(f.read())
+
+#per chiudere il file
+f.close()
+
+
+
+#Scrivo dentro un file esistente
+f = open("testo.txt", "a")
+f.write("CIAOOOOOOOOOOOOOOOOOOOO")
+f.close()
+
+#lo vado a leggere
+f = open("testo.txt", "r")
+print(f.read())
+f.close()
+
+#creo un file e ci vado a scrivere qualcosa
+x = open("altro.txt", "w")
+x.write("OLAOLAOLA")
+x.close()
+
+
+#elimino un file o una cartella
+import os
+os.remove("testo.txt")
+
+
+#elimino un file o una cartella con una verifica
+if os.path.exists("altro.txt"):
+    os.remove("altro.txt")
+else:
+    print("questo file non esiste")
+
+
+#elimina una cartella
+os.rmdir("a")
