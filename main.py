@@ -1,3 +1,5 @@
+import camelcase
+
 persona = {
     "nome": "angelo"
 }
@@ -17,7 +19,8 @@ def start():
 
     elif key == operazioni[2]:
         chiave = input("chiave da eliminare: ")
-        delete(chiave)
+        check = input("sei sicuro?: ")
+        delete(chiave, check.lower())
 
 
 def add(p):
@@ -36,10 +39,15 @@ def edit(chiave,valore):
         print("chiave non trovata")
 
 
-def delete(chiave):
+def delete(chiave, check):
     if chiave in persona:
-        del persona[chiave]
-        print(persona)
+        if check == "si":
+             del persona[chiave]
+             print(persona)
+        else:
+            return start()
+
+
 
 while True:
     start()    
