@@ -1,46 +1,26 @@
-#tuple
+#set
+x = {"milano", "roma", "napoli"}
+y = {"venezia", "udine"}
 
-q  = tuple(("Milano", "Catania"))
-w = ("Catania", True, 4)
+# possiamo solo aggiungere o rimuovere elementi
+x.add("venezia")
 
-print((q))
+x.update(y)
+x.remove("milano")
+x.discard("cagliari")
 
-#Controllo se un elemento esiste dentro una tuple o lista
-if "Catania" in q:
-    print("OK")
-else:
-    print("non trovato")
-
-print("------")
-print("------")
-print("------")
-print("------")
+print(x)
 
 
-#manipolare i diversi "contenitori" e trasformali a piacimento ESS...
-#Le tuple non possono essere modificate le liste si
-e = ("India", "Monaco", "Palermo")
-r = list(e)
-r[0] = "italia"
-e = tuple(r)
-print(r)
 
+#possiamo unire
+u = {"italia", "america", "trento"}
+l = {"palermo", "catania", "siracusa", "america"}
 
-print("------")
-print("------")
-print("------")
-print("------")
+z = u.union(l)  #genera un nuovo set
+u.update(l)     #aggiorna il set
 
-#spappolare una tupla in tante var
-container = ("strappo", "slancio", "stacco", "panca", "panca")
-(i,o,*p) = container
-print(i)
-print(o)
-print(p)
+#intersection
+u.intersection_update(l)
 
-#metodi
-l = container.count("panca")
-print(l)
-
-l = container.index("panca")
-print(l)
+print(u)
