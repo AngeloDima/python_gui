@@ -12,14 +12,8 @@ db = mysql.connector.connect(
 
 cursor = db.cursor()
 
-sql = "SELECT * FROM clienti WHERE nome = 'Luca'"
+sql = "SELECT * FROM clienti ORDER BY nome LIMIT 4"
 cursor.execute(sql)
-#prendo tutte le righe
 result = cursor.fetchall()
 for riga in result:
     print(riga)
-
-
-#prendo solo una riga
-# result = cursor.fetchone()
-# print(result)
