@@ -12,8 +12,11 @@ db = mysql.connector.connect(
 
 cursor = db.cursor()
 
-sql = "SELECT * FROM clienti ORDER BY nome LIMIT 4"
-cursor.execute(sql)
-result = cursor.fetchall()
-for riga in result:
-    print(riga)
+sql = "DELETE FROM clienti WHERE nome = %s AND cognome = %s"
+valore = ("Paolo", "Gialli")
+cursor.execute(sql, valore)
+db.commit()
+
+print("Numero di righe cancellate: ", cursor.rowcount)
+
+
