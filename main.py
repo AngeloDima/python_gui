@@ -10,15 +10,9 @@ db = mysql.connector.connect(
     database="pysql"
 )
 
-#INNER, LEFT, RIGHT JOIN
-
 cursor = db.cursor()
-sql = "SELECT \
-    nome, cognome, citta.nome_citta \
-    FROM clienti \
-    INNER JOIN citta ON clienti.citta = citta.id"
 
+sql = ("DROP TABLE IF EXISTS temporanea")
 cursor.execute(sql)
-result = cursor.fetchall()
-for riga in result:
-    print(riga)
+
+
