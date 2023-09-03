@@ -10,11 +10,15 @@ db = mysql.connector.connect(
     database="pysql"
 )
 
+#INNER, LEFT, RIGHT JOIN
+
 cursor = db.cursor()
+sql = "SELECT \
+    nome, cognome, citta.nome_citta \
+    FROM clienti \
+    INNER JOIN citta ON clienti.citta = citta.id"
 
-sql = "UPDATE clienti SET nome = %s WHERE ID = %s"
-valori = ("Giggio", 9)
-cursor.execute(sql,valori)
-
-db.commit()
-print("righe modificate: ", cursor.rowcount)
+cursor.execute(sql)
+result = cursor.fetchall()
+for riga in result:
+    print(riga)
