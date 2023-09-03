@@ -12,13 +12,14 @@ db = mysql.connector.connect(
 
 cursor = db.cursor()
 
-sql = "INSERT INTO clienti (nome, cognome) VALUES (%s, %s)"
-values = ("Luca", "Rossi")
-    
+sql = "SELECT * FROM clienti WHERE nome = 'Luca'"
+cursor.execute(sql)
+#prendo tutte le righe
+result = cursor.fetchall()
+for riga in result:
+    print(riga)
 
-#executemany manda tanti dati  con execute manda un solo dato
-cursor.execute(sql, values)
-db.commit()
 
-# dimmi l'ultimo id della table
-print("id riga inserita: ", cursor.lastrowid)
+#prendo solo una riga
+# result = cursor.fetchone()
+# print(result)
