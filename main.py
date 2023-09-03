@@ -12,11 +12,9 @@ db = mysql.connector.connect(
 
 cursor = db.cursor()
 
-sql = "DELETE FROM clienti WHERE nome = %s AND cognome = %s"
-valore = ("Paolo", "Gialli")
-cursor.execute(sql, valore)
+sql = "UPDATE clienti SET nome = %s WHERE ID = %s"
+valori = ("Giggio", 9)
+cursor.execute(sql,valori)
+
 db.commit()
-
-print("Numero di righe cancellate: ", cursor.rowcount)
-
-
+print("righe modificate: ", cursor.rowcount)
