@@ -10,27 +10,15 @@ db = mysql.connector.connect(
     database="pysql"
 )
 
-# cursor = db.cursor()
+cursor = db.cursor()
 
-# CREATE DATABASE
-# SHOW DATABASES
-# cursor.execute("SHOW DATABASES")
+sql = "INSERT INTO clienti (nome, cognome) VALUES (%s, %s)"
+values = ("Luca", "Rossi")
+    
 
-# for x in cursor:
-#     print(x)
+#executemany manda tanti dati  con execute manda un solo dato
+cursor.execute(sql, values)
+db.commit()
 
-
-#CREARE UNA TABLE
-# cursor = db.cursor()
-# cursor.execute("CREATE TABLE clienti (id INT AUTO_INCREMENT PRIMARY KEY, nome VARCHARD (255))")
-
-
-
-#VEDERE LE TABLE
-# cursor = db.cursor()
-# cursor.execute("SHOW TABLES")
-# for x in cursor:
-#     print(x)
-
-
-
+# dimmi l'ultimo id della table
+print("id riga inserita: ", cursor.lastrowid)
