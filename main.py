@@ -1,18 +1,20 @@
-# DB
-# pip install-connector-python
+import requests, bs4
 
-import mysql.connector
+url = input('Inserisci il sito: ')
+res = requests.get(url)
 
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="root",
-    database="pysql"
-)
+try:
+    res.raise_for_status()
+except Exception as exc:
+    print(f'si è verificato un problema: {exc}')
 
-cursor = db.cursor()
+html_page= bs4.BeautifulSoup(res.text, 'html.parser')
 
-sql = ("DROP TABLE IF EXISTS temporanea")
-cursor.execute(sql)
+elem_html = '.text'
+sel_elem = html_page.select(elem_html)
 
+text_elem = sel_elem[0].getText()
+with open("testo.txt", "w") as testo:
+    testo.write(text_elem)
 
+print("File testo aggiornato")
